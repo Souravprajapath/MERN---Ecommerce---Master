@@ -1,118 +1,105 @@
-# MERN Ecommerce
+#Ecommerce Web Application
 
-## Description
+A full-featured ecommerce application built with the MERN stack (MongoDB, Express.js, React.js, Node.js). This project includes essential features like user authentication, product management, cart functionality, order processing, and admin controls.
 
-An ecommerce store built with MERN stack, and utilizes third party API's. This ecommerce store enable three main different flows or implementations:
+## 🚀 Features
 
-1. Buyers browse the store categories, products and brands
-2. Sellers or Merchants manage their own brand component
-3. Admins manage and control the entire store components 
+- **User Authentication & Authorization** (JWT)
+- **Admin Dashboard** for managing products, categories, and users
+- **Product Listing & Filtering**
+- **Shopping Cart & Checkout**
+- **Order Placement & Order History**
+- **Secure API** using Express and JWT
+- **Responsive Design** with modern UI using React and Bootstrap
 
-### Features:
+## 🛠️ Tech Stack
 
-  * Node provides the backend environment for this application
-  * Express middleware is used to handle requests, routes
-  * Mongoose schemas to model the application data
-  * React for displaying UI components
-  * Redux to manage application's state
-  * Redux Thunk middleware to handle asynchronous redux actions
+**Frontend:**
+- React.js
+- Axios
+- React Router
+- Bootstrap
 
-## Demo
+**Backend:**
+- Node.js
+- Express.js
+- MongoDB with Mongoose
+- JWT for authentication
+- Multer for image uploads
 
-This application is deployed on Vercel Please check it out :smile: [here](https://mern-store-gold.vercel.app).
-
-See admin dashboard [demo](https://mernstore-bucket.s3.us-east-2.amazonaws.com/admin.mp4)
-
-## Docker Guide
-
-To run this project locally you can use docker compose provided in the repository. Here is a guide on how to run this project locally using docker compose.
-
-Clone the repository
-```
-git clone https://github.com/mohamedsamara/mern-ecommerce.git
-```
-
-Edit the dockercompose.yml file and update the the values for MONGO_URI and JWT_SECRET
-
-Then simply start the docker compose:
+## 📁 Project Structure
 
 ```
-docker-compose build
-docker-compose up
+
+mern-ecommerce-master/
+├── backend/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
+│   ├── server.js
+│   └── config/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── App.js
+│   │   └── index.js
+├── .env
+├── package.json
+
+````
+
+## ⚙️ Setup Instructions
+
+### Prerequisites
+- Node.js and npm
+- MongoDB installed locally or MongoDB Atlas
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/Souravprajapath/MERN---Ecommerce---Master.git
+cd MERN---Ecommerce---Master
+````
+
+### 2. Set up environment variables
+
+Create a `.env` file in the `backend/` directory and add:
+
+```env
+PORT=5000
+MONGO_URI=your_mongo_connection_string
+JWT_SECRET=your_jwt_secret
 ```
 
-## Database Seed
+### 3. Install dependencies
 
-* The seed command will create an admin user in the database
-* The email and password are passed with the command as arguments
-* Like below command, replace brackets with email and password. 
-* For more information, see code [here](server/utils/seed.js)
+```bash
+# For backend
+cd backend
+npm install
 
-```
-npm run seed:db [email-***@****.com] [password-******] // This is just an example.
-```
-
-## Install
-
-`npm install` in the project root will install dependencies in both `client` and `server`. [See package.json](package.json)
-
-Some basic Git commands are:
-
-```
-git clone https://github.com/mohamedsamara/mern-ecommerce.git
-cd project
+# For frontend
+cd ../frontend
 npm install
 ```
 
-## ENV
+### 4. Run the development servers
 
-Create `.env` file for both client and server. See examples:
-
-[Frontend ENV](client/.env.example)
-
-[Backend ENV](server/.env.example)
-
-
-## Vercel Deployment
-
-Both frontend and backend are deployed on Vercel from the same repository. When deploying on Vercel, make sure to specifiy the root directory as `client` and `server` when importing the repository. See [client vercel.json](client/vercel.json) and [server vercel.json](server/vercel.json).
-
-## Start development
-
-```
+```bash
+# Start backend
+cd backend
 npm run dev
+
+# Start frontend
+cd ../frontend
+npm start
 ```
 
-## Languages & tools
+The app will run on:
 
-- [Node](https://nodejs.org/en/)
-
-- [Express](https://expressjs.com/)
-
-- [Mongoose](https://mongoosejs.com/)
-
-- [React](https://reactjs.org/)
-
-- [Webpack](https://webpack.js.org/)
+* Frontend: `http://localhost:3000`
+* Backend API: `http://localhost:5000`
 
 
-### Code Formatter
-
-- Add a `.vscode` directory
-- Create a file `settings.json` inside `.vscode`
-- Install Prettier - Code formatter in VSCode
-- Add the following snippet:  
-
-```json
-
-    {
-      "editor.formatOnSave": true,
-      "prettier.singleQuote": true,
-      "prettier.arrowParens": "avoid",
-      "prettier.jsxSingleQuote": true,
-      "prettier.trailingComma": "none",
-      "javascript.preferences.quoteStyle": "single",
-    }
-
-```
-
+---
